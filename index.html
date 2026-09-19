@@ -1,42 +1,87 @@
 <!DOCTYPE html>
+
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pesquisa Culturama</title>
+
+
+<link rel="icon" href="css/culturama-favico.png">
+<link rel="stylesheet" href="css/style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Work+Sans&display=swap" rel="stylesheet">
+
+<title>Pesquisa Culturama</title>
+
+
 </head>
+
 <body>
+
+
+<main>
+
     <header>
-        <h1>Pesquisa Culturama</h1>
+        <img src="img/logo-culturama.png" alt="Logo Culturama">
+        <h1>Pesquisa de opinião</h1>
     </header>
+
     <section>
-        <form action="" method="get">
+
+        <form action="sucesso.html" method="get">
+
             <fieldset>
                 <legend>Dados Pessoais</legend>
+
                 <label for="name">Nome</label>
                 <input id="name" type="text" name="userName" required>
-                <br>
+
                 <label for="age">Idade</label>
                 <input id="age" type="number" name="userAge" min="12" max="100" required>
-                <br>
+
                 <label for="birthDate">Data de Nascimento</label>
                 <input id="birthDate" type="date" name="userBirthDate">
-                <br>
+
                 <label for="email">Email</label>
                 <input id="email" type="email" name="userEmail">
-                <br>
+
                 <label for="phoneNumber">Telefone</label>
-                <input id="phoneNumber" type="tel" name="userPhoneNumber" pattern="[0-9]{11}" placeholder="DDD+number without spaces">
-                <br>
+                <input
+                    id="phoneNumber"
+                    type="tel"
+                    name="userPhoneNumber"
+                    pattern="[0-9]{11}"
+                    placeholder="DDD + número sem espaços ou hífen"
+                    aria-describedby="phoneHelp"
+                >
+
+                <small id="phoneHelp">
+                    Preencha com 11 dígitos no formato: DDD + número sem espaços ou hífen.
+                </small>
+
                 <label for="image">Upload de foto</label>
-                <input id="image" type="file" accept="image/*" name="userImage">
-                <br>
+                <input
+                    id="image"
+                    type="file"
+                    accept="image/png, image/jpeg"
+                    name="userImage"
+                    aria-describedby="imageHelp"
+                >
+
+                <small id="imageHelp">
+                    Envie uma foto em formato PNG ou JPEG.
+                </small>
+
             </fieldset>
 
             <fieldset>
                 <legend>Perfil</legend>
 
                 <p>Gênero:</p>
+
                 <input id="fem" type="radio" name="userGender" value="Feminino">
                 <label for="fem">Feminino</label>
 
@@ -46,19 +91,18 @@
                 <input id="notInformed" type="radio" name="userGender" value="notInformed">
                 <label for="notInformed">Prefiro não informar</label>
 
-                <br>
-
                 <label for="maritalStatus">Estado civil:</label>
                 <select id="maritalStatus" name="userMaritalStatus">
                     <option value="notInformed">Selecione...</option>
                     <option value="casado">Casado</option>
                     <option value="solteiro">Solteiro</option>
                     <option value="divorciado">Divorciado</option>
-                    <option value="casado">União estável</option>
+                    <option value="uniaoEstavel">União estável</option>
                 </select>
 
                 <label for="state">Estado:</label>
                 <select id="state" name="userState" required>
+                    <option value="">Selecione...</option>
                     <option value="acre">Acre</option>
                     <option value="alagoas">Alagoas</option>
                     <option value="amapa">Amapá</option>
@@ -66,7 +110,7 @@
                     <option value="bahia">Bahia</option>
                     <option value="ceara">Ceará</option>
                     <option value="distritoFederal">Distrito Federal</option>
-                    <option value="espiritoSanto">Espirito Santo</option>
+                    <option value="espiritoSanto">Espírito Santo</option>
                     <option value="goias">Goiás</option>
                     <option value="maranhao">Maranhão</option>
                     <option value="matoGrossoDoSul">Mato Grosso do Sul</option>
@@ -89,59 +133,119 @@
                 </select>
 
                 <label for="city">Cidade:</label>
-                <input type="text" id="city" name="userCity" autocomplete="address-level2" placeholder="Ex.: Fortaleza" />
-                
+                <input
+                    type="text"
+                    id="city"
+                    name="userCity"
+                    autocomplete="address-level2"
+                    placeholder="Ex.: Mogi Guaçu"
+                >
+
             </fieldset>
 
             <fieldset>
                 <legend>Hábitos</legend>
+
                 <p>Redes Sociais:</p>
+
                 <input id="instagram" type="checkbox" name="social" value="instagram">
                 <label for="instagram">Instagram</label>
+
                 <br>
+
                 <input id="facebook" type="checkbox" name="social" value="facebook">
                 <label for="facebook">Facebook</label>
+
                 <br>
+
                 <input id="linkedin" type="checkbox" name="social" value="linkedin">
-                <label for="linkedin">Linkedin</label>
+                <label for="linkedin">LinkedIn</label>
+
                 <br>
+
                 <input id="X" type="checkbox" name="social" value="X">
                 <label for="X">X</label>
+
                 <br>
+
                 <label for="musicStyle">Estilo musical:</label>
-                <input id="musicStyle" name="userMusicStyle" type="text">
+                <input id="musicStyle" name="userMusicStyle" type="text" list="StyleTypes">
+
                 <datalist id="StyleTypes">
-                    <option value="Rock"></option>
-                    <option value="Pop"></option>
-                    <option value="Samba"></option>
-                    <option value="sertanejo"></option>
+                    <option value="Rock">
+                    <option value="Pop">
+                    <option value="Samba">
+                    <option value="Sertanejo">
                 </datalist>
+
                 <label for="favoriteColor">Cor favorita:</label>
                 <input type="color" name="userFavoriteColor" id="favoriteColor">
+
             </fieldset>
 
             <fieldset>
                 <legend>Opinião</legend>
+
                 <p>O que você acha da qualidade do nosso serviço?</p>
 
                 <input type="radio" id="otimo" name="userServiceOpinion" value="otima">
-                <label for="otima">Ótima</label><br>
+                <label for="otimo">Ótima</label>
+
+                <br>
 
                 <input type="radio" id="boa" name="userServiceOpinion" value="boa">
-                <label for="boa">Boa</label><br>
+                <label for="boa">Boa</label>
+
+                <br>
 
                 <input type="radio" id="regular" name="userServiceOpinion" value="regular">
-                <label for="regular">Regular</label><br>
+                <label for="regular">Regular</label>
+
+                <br>
 
                 <input type="radio" id="ruim" name="userServiceOpinion" value="ruim">
-                <label for="ruim">Ruim</label><br>
+                <label for="ruim">Ruim</label>
+
+                <br>
 
                 <label for="comment">Escreva sua opinião:</label>
-                <textarea name="userComment" id="comment" placeholder="Digite aqui.."></textarea>
+                <textarea
+                    name="userComment"
+                    id="comment"
+                    placeholder="Digite aqui..."
+                ></textarea>
+
             </fieldset>
 
-            <button type="submit">Enviar</button>
+            <fieldset>
+                <legend>Confirmações</legend>
+
+                <input type="checkbox" name="userLgpd" id="userLgpd" value="accepted" required>
+                <label for="userLgpd">Eu aceito participar da pesquisa</label>
+
+                <br>
+
+                <input type="checkbox" name="userGetResult" id="userResult" value="accepted">
+                <label for="userResult">Desejo receber o resultado por email</label>
+
+                <br>
+
+            </fieldset>
+
+            <button type="submit" aria-label="Enviar dados do formulário">
+                Enviar
+            </button>
+
+            <button type="reset" aria-label="Limpar dados do formulário">
+                Limpar
+            </button>
+
         </form>
+
     </section>
+
+</main>
+
+
 </body>
 </html>
